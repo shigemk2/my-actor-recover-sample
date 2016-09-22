@@ -14,10 +14,11 @@ object Hello {
     // メッセージを送信
     actor ! "crash"
 
-    while(true) {
+    for (i <- 1 to 3) {
       Thread.sleep(1000)
       // メッセージを送信
       actor ! "hi"
     }
+    system.terminate
   }
 }
